@@ -96,7 +96,7 @@ if __name__ == '__main__':
     #Sidebar
     st.sidebar.header("Select options from below:")
     status_select = st.sidebar.multiselect('Select Status:', status_unique_all, default='Prisoner')
-    ssl_select = st.sidebar.multiselect('SSL Eligible:', ssl_eligible_unique, default=('Currently Eligible', 'Eligible in Next Ten Years', 'Not Eligible'))
+    ssl_select = st.sidebar.multiselect('SLL Eligible:', ssl_eligible_unique, default=('Currently Eligible', 'Eligible in Next Ten Years', 'Not Eligible'))
     life_sentence_select = st.sidebar.multiselect('Life Sentence:', life_sentence_unique, default=life_sentence_unique)
     race_select = st.sidebar.multiselect('Select Race:', race_unique_all, default='All')
     gender_select = st.sidebar.multiselect('Select Gender:', gender_unique, default=('Male', 'Female'))
