@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
 
     # Scrape date
-    st.write('Scrape Date (dd/mm/yyyy): 25-05-2024')
+    st.write('Scrape Date (dd/mm/yyyy): 01-06-2025')
 
     #Add Spacer
     st.write('')
