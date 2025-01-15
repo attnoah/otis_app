@@ -107,7 +107,7 @@ if __name__ == '__main__':
     gender_select = st.sidebar.multiselect('Select Gender:', gender_unique, default=('Male', 'Female'))
     county_select = st.sidebar.multiselect('Select County:', county_unique_all, default='All')
     mcl_select = st.sidebar.multiselect('Select MCL:', mcl_unique_all, default='All')
-    offense_select = st.sidebar.multiselect('Select Offense:', data['Offense'].unique().tolist(), default='All')
+    offense_select = st.sidebar.multiselect('Select Offense:', offense_unqiue_all, default='All')
     crime_type_select = st.sidebar.multiselect('Select Crime Type:', crime_type_unique_all, default='All')
     location_select = st.sidebar.multiselect('Select Location:', location_unique_all, default='All')
 
