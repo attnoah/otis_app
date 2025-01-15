@@ -78,6 +78,11 @@ if __name__ == '__main__':
     mcl_unique_all = mcl_unique.copy()
     mcl_unique_all.append('All')
 
+    #Offense
+    offense_unique = data['Offense'].unique().tolist()
+    offense_unique_all = offense_unique.copy()
+    offense_unique_all.append('All')
+
     #Crime Type
     crime_type_unique = data['crime_type'].unique().tolist()
     crime_type_unique_all = crime_type_unique.copy()
@@ -102,6 +107,7 @@ if __name__ == '__main__':
     gender_select = st.sidebar.multiselect('Select Gender:', gender_unique, default=('Male', 'Female'))
     county_select = st.sidebar.multiselect('Select County:', county_unique_all, default='All')
     mcl_select = st.sidebar.multiselect('Select MCL:', mcl_unique_all, default='All')
+    offense_select = st.sidebar.multiselect('Select Offense:', data['Offense'].unique().tolist(), default='All')
     crime_type_select = st.sidebar.multiselect('Select Crime Type:', crime_type_unique_all, default='All')
     location_select = st.sidebar.multiselect('Select Location:', location_unique_all, default='All')
 
@@ -113,6 +119,8 @@ if __name__ == '__main__':
         county_select = county_unique
     if "All" in mcl_select:
         mcl_select = mcl_unique
+    if "All" in offense_select:
+        offense_select = offense_unique
     if "All" in crime_type_select:
         crime_type_select = crime_type_unique
     if "All" in location_select:
@@ -138,6 +146,7 @@ if __name__ == '__main__':
                         & (data['County'].isin(county_select)) \
                         & (data['life_sentence'].isin(life_sentence_select)) \
                         & (data['MCL#'].isin(mcl_select)) \
+                        & (data['Offense'].isin(offense_select)) \
                         & (data['crime_type'].isin(crime_type_select)) \
                         & (data['valLocation'].isin(location_select)) \
                         & (data['current_age'].between(age_select[0], age_select[1])) \
