@@ -311,15 +311,15 @@ if __name__ == '__main__':
         st.bar_chart(bargraph_crime_type[['Crime Type', 'Count']].set_index('Crime Type'))
 
     with col8:
-        age_offense = filtered_data['age_at_offense'].shape[0]
+        total_age_offense = filtered_data['age_at_offense'].shape[0]
         bargraph_age_offense = filtered_data['age_at_offense'].value_counts().reset_index()
         bargraph_age_offense.columns = ['Age at Offense', 'Count']
-        bargraph_age_offense['Percentage (%)'] = ((bargraph_age['Count'] / total_age) * 100).round(2)
+        bargraph_age_offense['Percentage (%)'] = ((bargraph_age_offense['Count'] / total_age_offense) * 100).round(2)
 
         # Display bar chart for age distribution using st.bar_chart
         st.subheader('Age at Offense')
         if st.checkbox('Show Age of Offense Table'):
-            st.write('Age at Offense Table', bargraph_age)
+            st.write('Age at Offense Table', bargraph_age_offense)
         if st.checkbox('Show Age at Offense Stats'):
             st.write('Age at Offense Stats', filtered_data['age_at_offense'].describe())
         st.bar_chart(bargraph_age_offense[['Age at Offense', 'Count']].set_index('Age at Offense'))
