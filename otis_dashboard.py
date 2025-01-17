@@ -322,7 +322,8 @@ if __name__ == '__main__':
             st.write('Age at Offense Table', bargraph_age)
         if st.checkbox('Show Age at Offense Stats'):
             st.write('Age at Offense Stats', filtered_data['age_at_offense'].describe())
-        
+        st.bar_chart(bargraph_age_offense[['Age at Offense', 'Count']].set_index('Age at Offense'))
+
     
     #  st.subheader('County Distribution')
     #     county_table = filtered_data['County'].value_counts().reset_index()
